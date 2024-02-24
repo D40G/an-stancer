@@ -300,38 +300,38 @@ RegisterNUICallback('closecarcontrol', function(data, cb)
 end)
 
 --- Thread
-CreateThread(function()
-	for k, v in pairs(Config.StanceLocations) do -- For every unique name get it's values
-		lib.zones.sphere({
-			coords = v.coords,
-			radius = v.size,
-			debug = v.debug,
-			inside = function ()
-				if IsControlJustPressed(0, 38) then
-					OpenStancer()
+-- CreateThread(function()
+-- 	for k, v in pairs(Config.StanceLocations) do -- For every unique name get it's values
+-- 		lib.zones.sphere({
+-- 			coords = v.coords,
+-- 			radius = v.size,
+-- 			debug = v.debug,
+-- 			inside = function ()
+-- 				if IsControlJustPressed(0, 38) then
+-- 					OpenStancer()
 
-				end
-			end,
-			onEnter = function ()
-				inZone.status = true
-				inZone.index = k
+-- 				end
+-- 			end,
+-- 			onEnter = function ()
+-- 				inZone.status = true
+-- 				inZone.index = k
 
-				if cache.vehicle then
-					Utils.drawtext(v.drawtext.inveh, "show")
-					return
-				end
+-- 				if cache.vehicle then
+-- 					Utils.drawtext(v.drawtext.inveh, "show")
+-- 					return
+-- 				end
 
-				Utils.drawtext(v.drawtext.outveh, "show")
-			end,
-			onExit = function ()
-				inZone.status = false
-				inZone.index = nil
+-- 				Utils.drawtext(v.drawtext.outveh, "show")
+-- 			end,
+-- 			onExit = function ()
+-- 				inZone.status = false
+-- 				inZone.index = nil
 				
-				Utils.drawtext(nil, "hide")
-			end
-		})
-	end
-end)
+-- 				Utils.drawtext(nil, "hide")
+-- 			end
+-- 		})
+-- 	end
+-- end)
 
 local cachedata = {}
 local cachestancer = {}
