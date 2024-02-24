@@ -21,7 +21,7 @@ return {
             {
                 coords = vec3(1127.5533, 2648.6147, 37.9965),
                 size = 3.0,
-                debug = true,
+                debug = false,
                 drawtext = {
                     inveh = "Press E for the Stancer",
                     outveh = "You need to be in a vehicle!"
